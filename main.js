@@ -11,9 +11,12 @@ const bot = new TelegramBot(TOKEN, { polling: false });
 const app = express();
 app.use(express.json());
 
-app.use('', (req, res, next) => {
+app.use((req, res, next) => {
 	console.log(`➡️ Petición entrante: ${req.method} ${req.url}`);
 	console.log(`👤 User-Agent: ${req.headers['user-agent']}`);
+	res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
 	next();
 });
 
