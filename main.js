@@ -4,7 +4,7 @@ import TelegramBot from "node-telegram-bot-api";
 import express from "express";
 
 const TOKEN = process.env.TOKEN;
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT_SV || 3000;
 const WEBHOOK_PATH = process.env.WEBHOOK_PATH;
 
 const bot = new TelegramBot(TOKEN, { polling: false });
